@@ -1,66 +1,87 @@
-import Image from "next/image";
+import Hero from "@/components/sections/Hero";
+import Quote from "@/components/sections/Quote";
+import Invitation from "@/components/sections/Invitation";
+import CoupleCard from "@/components/sections/CoupleCard";
+import Events from "@/components/sections/Events";
+import SeeTheRoute from "@/components/sections/SeeTheRoute";
+import Story from "@/components/sections/Story";
+import Gallery from "@/components/sections/Gallery";
+import RSVP from "@/components/sections/RSVP";
+import InfoGrid from "@/components/sections/InfoGrid";
+import Countdown from "@/components/sections/Countdown";
+import GlobalLanterns from "@/components/sections/GlobalLanterns";
+import Footer from "@/components/sections/Footer";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className={styles.main}>
+      {/* Primary 5.8k tall background container */}
+      <div className={styles.parallaxContainer}>
+        <div className={styles.tallBackground}>
+          <img 
+            src="https://framerusercontent.com/images/uBiouh876wupNLU2FX6v6If8tHQ.png" 
+            alt="Main Path" 
+            className={styles.bgImage}
+          />
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        
+        {/* Global Lanterns (shared across first sections) */}
+        <GlobalLanterns />
+        
+        {/* Absolutely positioned components based on analysis */}
+        <div className={styles.contentLayer}>
+          <div className={styles.heroPosition}>
+            <Hero />
+          </div>
+          
+          <div className={styles.quotePosition}>
+            <Quote />
+          </div>
+          
+          <div className={styles.invitationPosition}>
+            <Invitation />
+          </div>
+          
+          <div className={styles.eventsPosition}>
+            <Events />
+          </div>
+
+          {/* New "See the Route" section */}
+          <div className={styles.routePosition}>
+             <SeeTheRoute />
+          </div>
         </div>
-      </main>
-    </div>
+      </div>
+
+      {/* The following sections start naturally after the 5.8k parallax container */}
+      <div style={{ background: '#fff' }}>
+        <section className="section" style={{ background: 'white' }}>
+          <CoupleCard 
+            role="groom"
+            name="SYED FAROOQ"
+            image="https://framerusercontent.com/images/fKFg2vQEmI70QHKfOSr54pE7KQ4.jpeg"
+            parents={["Mr. Syed Mohammed Rafi", "Mrs. Syed Noor Jahan"]}
+          />
+        </section>
+        
+        <section className="section" style={{ background: '#f8f8f8', marginTop: 0 }}>
+          <CoupleCard 
+            role="bride"
+            name="SHAIK SANOBER"
+            image="https://framerusercontent.com/images/vXYo7Ef7EIsZJPtxuKuBSurXF4.jpeg"
+            parents={["Mr. Shaik Khader valli", "Mrs. Shaik Akthar begum"]}
+            reverse
+          />
+        </section>
+
+        <Story />
+        <Gallery />
+        {/* <RSVP /> */}
+        {/* <InfoGrid /> */}
+        <Countdown />
+        <Footer />
+      </div>
+    </main>
   );
 }
