@@ -22,7 +22,7 @@ export default function GlobalLanterns() {
       id: i,
       size: finalSize,
       x: `${Math.random() * 100}%`,
-      y: Math.random() * 5876,
+      y: Math.random() * 4800, // Stop lanterns before 'See the Route' section (starts ~5400)
       duration: Math.random() * (12 - 7) + 7,
       delay: Math.random() * 6,
     };

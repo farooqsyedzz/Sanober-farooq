@@ -8,11 +8,12 @@ interface CoupleCardProps {
   name: string;
   image: string;
   parents: string[];
-  role: "groom" | "bride";
+  role: "groom"| "bride";
+  profession?: string;
   reverse?: boolean;
 }
 
-export default function CoupleCard({ name, image, parents, role, reverse = false }: CoupleCardProps) {
+export default function CoupleCard({ name, image, parents, role, profession, reverse = false }: CoupleCardProps) {
   return (
     <div className={`${styles.coupleCardWrapper} ${reverse ? styles.rowReverse : ''}`}>
       <motion.div
@@ -40,6 +41,7 @@ export default function CoupleCard({ name, image, parents, role, reverse = false
       >
         <span className="serif" style={{ color: 'var(--color-primary)' }}>{role.toUpperCase()}</span>
         <h2 className="serif">{name}</h2>
+        {profession && <p className={styles.professionText}>{profession}</p>}
         <div className={styles.parentsList}>
             <p className="gotu">Our beloved {role === "groom" ? "Son" : "Daughter"} of</p>
             {parents.map((parent, i) => (

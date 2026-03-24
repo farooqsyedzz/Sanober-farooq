@@ -35,13 +35,15 @@ export default function MeetCouple() {
           <CoupleCard 
             role="groom"
             name="SYED FAROOQ"
+            profession="B.Tech Software Engineer"
             image="https://framerusercontent.com/images/fKFg2vQEmI70QHKfOSr54pE7KQ4.jpeg"
-            parents={["Mr. Syed Mohammed Rafi", "Mrs. Syed Noor Jahan"]}
+            parents={["Mr. Syed Mohammed Rafi", "Mrs. Syed NoorJahan"]}
           />
           
           <CoupleCard 
             role="bride"
             name="SHAIK SANOBER"
+            profession="B.Tech"
             image="https://framerusercontent.com/images/vXYo7Ef7EIsZJPtxuKuBSurXF4.jpeg"
             parents={["Mr. Shaik Khader valli", "Mrs. Shaik Akthar begum"]}
             reverse
