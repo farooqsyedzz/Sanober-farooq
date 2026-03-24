@@ -1,7 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import Quote from "@/components/sections/Quote";
 import Invitation from "@/components/sections/Invitation";
-import CoupleCard from "@/components/sections/CoupleCard";
+import MeetCouple from "@/components/sections/MeetCouple";
 import Events from "@/components/sections/Events";
 import SeeTheRoute from "@/components/sections/SeeTheRoute";
 import Story from "@/components/sections/Story";
@@ -47,38 +47,17 @@ export default function Home() {
             <Events />
           </div>
 
-          {/* New "See the Route" section */}
           <div className={styles.routePosition}>
              <SeeTheRoute />
           </div>
         </div>
       </div>
 
-      {/* The following sections start naturally after the 5.8k parallax container */}
-      <div style={{ background: '#fff' }}>
-        <section className="section" style={{ background: 'white' }}>
-          <CoupleCard 
-            role="groom"
-            name="SYED FAROOQ"
-            image="https://framerusercontent.com/images/fKFg2vQEmI70QHKfOSr54pE7KQ4.jpeg"
-            parents={["Mr. Syed Mohammed Rafi", "Mrs. Syed Noor Jahan"]}
-          />
-        </section>
-        
-        <section className="section" style={{ background: '#f8f8f8', marginTop: 0 }}>
-          <CoupleCard 
-            role="bride"
-            name="SHAIK SANOBER"
-            image="https://framerusercontent.com/images/vXYo7Ef7EIsZJPtxuKuBSurXF4.jpeg"
-            parents={["Mr. Shaik Khader valli", "Mrs. Shaik Akthar begum"]}
-            reverse
-          />
-        </section>
+      <MeetCouple />
 
+      <div style={{ background: '#fff' }}>
         <Story />
         <Gallery />
-        {/* <RSVP /> */}
-        {/* <InfoGrid /> */}
         <Countdown />
         <Footer />
       </div>

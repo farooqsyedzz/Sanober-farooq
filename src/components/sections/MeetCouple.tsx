@@ -1,0 +1,53 @@
+"use client";
+
+import { motion } from "framer-motion";
+import styles from "./sections.module.css";
+import CoupleCard from "./CoupleCard";
+
+export default function MeetCouple() {
+  return (
+    <section className={styles.meetCoupleSection}>
+      <div className={styles.meetCoupleContent}>
+        <motion.h2 
+            className={`${styles.meetCoupleTitle} serif`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+        >
+          MEET THE BRIDE AND GROOM
+        </motion.h2>
+        
+        <motion.p 
+            className={styles.meetCoupleDesc}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+        >
+          We are both so delighted that you will be joining us to celebrate what we 
+          hope will be one of the most special days of our lives. The love and warmth 
+          shown to us by so many people since our Nikah has been incredibly moving 
+          and has touched us deeply. We would like to take this opportunity to thank 
+          everyone most sincerely for their kindness and prayers. We are truly looking 
+          forward to seeing you at the wedding functions.
+        </motion.p>
+
+        <div className={styles.coupleCardsRow}>
+          <CoupleCard 
+            role="groom"
+            name="SYED FAROOQ"
+            image="https://framerusercontent.com/images/fKFg2vQEmI70QHKfOSr54pE7KQ4.jpeg"
+            parents={["Mr. Syed Mohammed Rafi", "Mrs. Syed Noor Jahan"]}
+          />
+          
+          <CoupleCard 
+            role="bride"
+            name="SHAIK SANOBER"
+            image="https://framerusercontent.com/images/vXYo7Ef7EIsZJPtxuKuBSurXF4.jpeg"
+            parents={["Mr. Shaik Khader valli", "Mrs. Shaik Akthar begum"]}
+            reverse
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
