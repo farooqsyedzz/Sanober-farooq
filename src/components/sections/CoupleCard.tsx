@@ -43,7 +43,7 @@ export default function CoupleCard({ name, image, parents, role, profession, rev
         <h2 className="serif">{name}</h2>
         {profession && <p className={styles.professionText}>{profession}</p>}
         <div className={styles.parentsList}>
-            <p className="gotu">Our beloved {role === "groom" ? "Son" : "Daughter"} of</p>
+            <p className="gotu">{role === "groom" ? "second son" : "eldest daughter"} of</p>
             {parents.map((parent, i) => (
                 <p key={i} className="serif" style={{ fontSize: '1.4rem' }}>{parent}</p>
             ))}

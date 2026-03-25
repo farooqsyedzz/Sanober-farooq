@@ -18,11 +18,7 @@ export default function Story() {
           <h3 className="serif">A CHAPTER CALLED FOREVER</h3>
           <div className={styles.storyOrnament}></div>
           <p className="gotu">
-            Every great love story starts with a simple moment. Our paths crossed, 
-            and what began as a cherished friendship blossomed into a beautiful 
-            promise of forever. Today, as we stand at the threshold of a new chapter, 
-            we celebrate the journey that brought us together—a journey filled with 
-            laughter, support, and the deep understanding that we were meant to be.
+            Every beautiful journey begins with a simple moment. What started as a cherished bond grew into a promise written by Allah. As we step into a new chapter of our lives, we celebrate a journey filled with love, patience, and understanding—one that was always meant to be.
           </p>
         </motion.div>
 
