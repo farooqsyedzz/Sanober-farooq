@@ -6,6 +6,7 @@ import styles from "./sections.module.css";
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, mins: 0, secs: 0 });
+  const [eventStatus, setEventStatus] = useState<'counting' | 'today' | 'ended'>('counting');
 
 useEffect(() => {
   const targetDate = new Date(2026, 3, 5, 12, 0, 0).getTime(); 
@@ -16,11 +17,18 @@ useEffect(() => {
     const distance = targetDate - now;
 
     if (distance <= 0) {
-      clearInterval(interval);
+      // Check if event day has passed
+      const eventEndDate = new Date(2026, 3, 6, 0, 0, 0).getTime();
+      if (now >= eventEndDate) {
+        setEventStatus('ended');
+      } else {
+        setEventStatus('today');
+      }
       setTimeLeft({ days: 0, hours: 0, mins: 0, secs: 0 });
       return;
     }
 
+    setEventStatus('counting');
     setTimeLeft({
       days: Math.floor(distance / (1000 * 60 * 60 * 24)),
       hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
@@ -75,40 +83,80 @@ useEffect(() => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          The countdown begins
+          {eventStatus === 'counting' && "The countdown begins"}
+          {eventStatus === 'today' && "The Day Has Arrived!"}
+          {eventStatus === 'ended' && "Thank You For Celebrating With Us!"}
         </motion.h2>
 
-        <motion.div 
-          className={styles.countdownTimer}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-        >
-          <span className={styles.timerDigit}>
-            {String(timeLeft.days).padStart(2, "0")}
-          </span>
-          <span className={styles.timerSeparator}>:</span>
-          <span className={styles.timerDigit}>
-            {String(timeLeft.hours).padStart(2, "0")}
-          </span>
-          <span className={styles.timerSeparator}>:</span>
-          <span className={styles.timerDigit}>
-            {String(timeLeft.mins).padStart(2, "0")}
-          </span>
-          <span className={styles.timerSeparator}>:</span>
-          <span className={styles.timerDigit}>
-            {String(timeLeft.secs).padStart(2, "0")}
-          </span>
-        </motion.div>
+        {eventStatus === 'counting' ? (
+          <>
+            <motion.div 
+              className={styles.countdownTimer}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              <span className={styles.timerDigit}>
+                {String(timeLeft.days).padStart(2, "0")}
+              </span>
+              <span className={styles.timerSeparator}>:</span>
+              <span className={styles.timerDigit}>
+                {String(timeLeft.hours).padStart(2, "0")}
+              </span>
+              <span className={styles.timerSeparator}>:</span>
+              <span className={styles.timerDigit}>
+                {String(timeLeft.mins).padStart(2, "0")}
+              </span>
+              <span className={styles.timerSeparator}>:</span>
+              <span className={styles.timerDigit}>
+                {String(timeLeft.secs).padStart(2, "0")}
+              </span>
+            </motion.div>
 
-        <motion.p 
-          className={styles.countdownDescription}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
-        >
-          Our families are excited that you are able to join us in celebrating what we hope will be one of the happiest days of our lives.
-        </motion.p>
+            <motion.p 
+              className={styles.countdownDescription}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
+            >
+              Our families are excited that you are able to join us in celebrating what we hope will be one of the happiest days of our lives.
+            </motion.p>
+          </>
+        ) : eventStatus === 'today' ? (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            style={{ textAlign: 'center' }}
+          >
+            <p style={{ fontSize: '2.5rem', color: 'var(--color-primary)', marginTop: '40px', fontFamily: 'var(--font-serif)' }}>
+              Our Nikah Celebration Begins Today!
+            </p>
+            <p style={{ fontSize: '1.2rem', color: 'white', marginTop: '20px' }}>
+              Welcome to the blessed union of Syed Farooq & Shaik Sanober
+            </p>
+            <p style={{ fontSize: '1rem', color: 'var(--color-secondary)', marginTop: '15px', fontStyle: 'italic' }}>
+              We are honored to have you here to celebrate this special day with us.
+            </p>
+          </motion.div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            style={{ textAlign: 'center' }}
+          >
+            <p style={{ fontSize: '2rem', color: 'var(--color-primary)', marginTop: '40px', fontFamily: 'var(--font-serif)' }}>
+              What a Blessed Day it was!
+            </p>
+            <p style={{ fontSize: '1.2rem', color: 'white', marginTop: '20px' }}>
+              We are eternally grateful for your presence and blessings.
+            </p>
+            <p style={{ fontSize: '1rem', color: 'var(--color-secondary)', marginTop: '15px', fontStyle: 'italic' }}>
+              May Allah bless our union and all of you abundantly. Ameen.
+            </p>
+          </motion.div>
+        )}
 
         {/* <motion.p 
           className={styles.countdownCopyright}

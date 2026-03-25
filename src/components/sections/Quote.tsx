@@ -19,7 +19,7 @@ export default function Quote() {
           <h2 className={styles.quoteTealText}>
             "And we created you in pairs."
           </h2>
-          <p className={styles.quoteSourceText}>Quran 78:8</p>
+          <p className={styles.quoteSourceText}>— Quran 78:8</p>
         </motion.div>
       </div>
     </section>

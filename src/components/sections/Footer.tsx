@@ -12,7 +12,7 @@ export default function Footer() {
             <a href="#hero">HOME</a>
             <a href="#events">EVENTS</a>
             <a href="#gallery">GALLERY</a>
-            <a href="#rsvp">RSVP</a>
+            {/* <a href="#rsvp">RSVP</a> */}
          </div>
          
          <div className={styles.credits}>

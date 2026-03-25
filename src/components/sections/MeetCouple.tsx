@@ -31,7 +31,7 @@ export default function MeetCouple() {
             role="groom"
             name="SYED FAROOQ"
             profession="B.Tech Software Engineer"
-            image="https://framerusercontent.com/images/fKFg2vQEmI70QHKfOSr54pE7KQ4.jpeg"
+            image="/images/groom.png"
             parents={["Mr. Syed Mohammed Rafi", "Mrs. Syed NoorJahan"]}
           />
           
@@ -39,7 +39,7 @@ export default function MeetCouple() {
             role="bride"
             name="SHAIK SANOBER"
             profession="B.Tech"
-            image="https://framerusercontent.com/images/vXYo7Ef7EIsZJPtxuKuBSurXF4.jpeg"
+            image="/images/bride.png"
             parents={["Mr. Shaik Khader valli", "Mrs. Shaik Akthar begum"]}
             reverse
           />

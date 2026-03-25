@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import styles from "./sections.module.css";
 
 const events = [
-  { title: "Shukrana", date: "Apr 04, 2026", time: "09:00 PM", location: "RLT Convention Kadapa" },
-  { title: "Nikkah", date: "Apr 05, 2026", time: "11:00 AM", location: "RLT Convention Kadapa" },
+  { title: "Nikkah", date: "Apr 05, 2026", time: "09:30 AM", location: "RLT Convention Kadapa" },
   { title: "Valima", date: "Apr 05, 2026", time: "02:00 PM", location: "RLT Convention Kadapa" },
   // { title: "Engagement", date: "Aug 20, 2026", time: "12:00 PM", location: "Crystal Garden" },
   // { title: "Nikah", date: "Aug 20, 2026", time: "08:30 PM", location: "Grand Mosque" },

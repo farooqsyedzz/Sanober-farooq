@@ -19,6 +19,26 @@ export default function MusicPlayer() {
     }
   };
 
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        // Page is hidden - pause music
+        if (audioRef.current && playing) {
+          audioRef.current.pause();
+          setPlaying(false);
+        }
+      } else {
+        // Page is visible - resume music if it was playing
+        if (audioRef.current && playing) {
+          audioRef.current.play();
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, [playing]);
+
   return (
     <div className={styles.musicContainer}>
       <audio 

@@ -29,7 +29,7 @@ export default function Story() {
            transition={{ duration: 1.5, delay: 0.3 }}
         >
            <Image 
-             src="https://framerusercontent.com/images/qHgHJGkX2jaNNoyQgK7oKCf8Kw.jpeg" 
+             src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500&h=700&fit=crop" 
              alt="Our Story" 
              width={500}
              height={700}
@@ -44,7 +44,7 @@ export default function Story() {
             transition={{ duration: 1, delay: 0.6 }}
             style={{ fontStyle: 'italic', opacity: 0.6, fontSize: '1rem' }}
         >
-            "Hand in hand, heart to heart."
+            "Hand in hand, with hearts united for the sake of Allah."
         </motion.div>
       </div>
     </section>
