@@ -23,8 +23,7 @@ export default function MeetCouple() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
         >
-          We are both truly grateful to Allah (SWT) that you will be joining us to celebrate this blessed day of our Nikah. The love and duas shown to us by so many people since our Nikah has been incredibly moving and has touched us deeply. We would like to take this opportunity to thank everyone most sincerely for their kindness and prayers. We are truly looking forward to seeing you at the wedding functions, Insha’Allah.
-        </motion.p>
+We are truly grateful to Allah (SWT) that you will be joining us to celebrate this blessed occasion of our Nikah. The love and duas we have received from everyone have been incredibly touching and mean a great deal to us. We sincerely thank you all for your kindness and prayers, and we look forward to celebrating together at the wedding functions, Insha’Allah        </motion.p>
 
         <div className={styles.coupleCardsRow}>
           <CoupleCard 

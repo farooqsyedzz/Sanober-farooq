@@ -50,6 +50,9 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Farooq Weds Sanobar",
   description: "Wedding Invitation - Farooq Weds Sanobar",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
