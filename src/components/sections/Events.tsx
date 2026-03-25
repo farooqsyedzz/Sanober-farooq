@@ -14,7 +14,7 @@ const events = [
 
 export default function Events() {
   return (
-    <section className={styles.eventsTransparent} style={{ padding: '200px 0' }}>
+    <section id="events" className={styles.eventsTransparent} style={{ padding: '200px 0' }}>
       <h2 className="serif" style={{ fontSize: '4.5rem', marginBottom: '100px', color: 'white' }}>Wedding Events</h2>
       
       <div className={styles.eventsGrid}>

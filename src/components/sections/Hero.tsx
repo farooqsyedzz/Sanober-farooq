@@ -5,7 +5,7 @@ import styles from "./sections.module.css";
 
 export default function Hero() {
   return (
-    <section className={styles.heroTransparent}>
+    <section id="hero" className={styles.heroTransparent}>
       {/* Hero Content - Centered */}
       <motion.div
         className={styles.heroContentV2}

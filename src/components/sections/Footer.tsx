@@ -9,10 +9,10 @@ export default function Footer() {
          <h2 className={`${styles.footerNames} serif`}>FAROOQ & SANOBER</h2>
          
          <div className={styles.footerLinks}>
-            <a href="#">HOME</a>
-            <a href="#">EVENTS</a>
-            <a href="#">GALLERY</a>
-            <a href="#">RSVP</a>
+            <a href="#hero">HOME</a>
+            <a href="#events">EVENTS</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#rsvp">RSVP</a>
          </div>
          
          <div className={styles.credits}>

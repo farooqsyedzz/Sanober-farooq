@@ -13,7 +13,7 @@ const galleryImages = [
 
 export default function Gallery() {
   return (
-    <section className={`${styles.gallerySection} section`}>
+    <section id="gallery" className={`${styles.gallerySection} section`}>
       <h2 className="serif" style={{ fontSize: '3rem', color: 'var(--color-primary)', marginBottom: '40px' }}>Our Memories</h2>
       
       <div className={styles.galleryGrid}>
