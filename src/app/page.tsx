@@ -57,7 +57,7 @@ export default function Home() {
 
       <div style={{ background: '#fff' }}>
         <Story />
-        <Gallery />
+        {/* <Gallery /> */}
         <Countdown />
         <Footer />
       </div>

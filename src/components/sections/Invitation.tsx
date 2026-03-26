@@ -17,9 +17,9 @@ export default function Invitation() {
 
         <div className={styles.familyNames}>
           <p className={styles.heavenlyBlessings}>WITH THE BLESSINGS OF ALLAH (SWT)</p>
-          <p className={styles.familyName}>Mrs. Syed Noor Jahan & Mr. Syed  Mohammed Rafi</p>
+          <p className={styles.familyName}> Mr. Syed  Mohammed Rafi & Mrs. Syed Noor Jahan</p>
           <span className={styles.ampersandSeperator}>&</span>
-          <p className={styles.familyName}>Mrs. Shaik Akthar begum & Mr.Shaik Khader valli</p>
+          <p className={styles.familyName}>Mr.Shaik Khader valli & Mrs. Shaik Akthar begum</p>
         </div>
 
         <div className={styles.inviteMain}>
